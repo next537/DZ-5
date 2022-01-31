@@ -34,6 +34,9 @@
   свойство classList у элементов.
    */
 
+const dropEl = document.querySelectorAll('.dropdown-item');
+dropEl.forEach(el => el.classList.add('super-dropdown'));
+console.log(dropEl);
 
   /*
   2. У элемента с классом btn необходимо убрать класс "btn-secondary", если он
@@ -41,12 +44,14 @@
   не было.
    */
 
+console.log(document.querySelector('.btn').classList.toggle('btn-secondary'));
 
   /*
   3. Необходимо удалить класс "dropdown-menu" у элемента, у которого
   присутствует класс "menu".
    */
 
+document.querySelector('.menu').remove('dropdown-menu');
 
   /*
   4. Используя метод insertAdjacentHTML добавьте после div'a с классом
@@ -54,22 +59,33 @@
     <a href="#">link</a>
    */
 
+const downEl = document.querySelector('div.dropdown');
+downEl.insertAdjacentHTML('afterbegin', '<a href="#">link</a>');
+console.log(downEl);
 
   /*
   5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
    */
 
+const dropidEl = document.getElementById('dropdownMenuButton');
+dropidEl.id='superDropdown';
+console.log(dropidEl);
 
   /*
   6. Добавьте атрибут data-dd со значением 3 элементу у которого существует
   атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
    */
 
+const ariaEl = document.querySelector('[aria-labelledby="dropdownMenuButton"]');
+document.dataset
+document.dd = "3";
+console.log(ariaEl); //выводит null
 
   /*
   7. Удалите атрибут type у элемента с классом "dropdown-toggle".
    */
 
+document.querySelector('.dropdown-toggle').removeAttribute('type');
 
   /*
   8. Выведите в консоль все имеющиеся атрибуты и их значения тега у которого
@@ -78,6 +94,13 @@
   Атрибут "class" содержит значение "btn btn-secondary dropdown-toggle"
    */
 
+const attributeEl = document.querySelectorAll('.btn.dropdown-toggle');
+attributeEl.attributes
+console.log(attributeEl);
+
+for (const attribute of attributeEl) {
+console.log(`Атрибут "${attributeEl.name}" содержит значение "${attributeEl.value}"`);
+} //Что то пошло не так
 
 </script>
 </body>
